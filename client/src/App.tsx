@@ -6,7 +6,12 @@ import SignIn from "./pages/sign-in";
 import SignUp from "./pages/sign-up";
 import Dashboard from "./pages/dashboard";
 import Profile from "./pages/profile";
-import ClockInOut from "./pages/timelog";
+import Projects from './pages/projects'
+import Clients from './pages/clients'
+import Tasks from './pages/tasks'
+import AssignedTasks from './pages/tasks/AssignedTasks'
+import Users from './pages/users'
+import Timesheet from "./pages/timelog";
 import Layout from "./components/Layout";
 import paths from "./components/paths";
 import { UserDetailsProvider } from "setup/app-context-manager/UserDetailsContext";
@@ -26,8 +31,14 @@ function App() {
         >
           <Route path={paths.home} element={<Dashboard />} />
           <Route path={paths.profile} element={<Profile />} />
-          <Route path={paths.timeclock} element={<ClockInOut />} />
+          {/* <Route path={paths.timeclock} element={<ClockInOut />} /> */}
           <Route path={paths.addUser} element={<SignUp />} />
+          <Route path={paths.projects} element={<Projects />} />
+          <Route path={paths.clients} element={<Clients />} />
+          <Route path={paths.tasks} element={<Tasks />} />
+          <Route path={paths.myTasks} element={<AssignedTasks />} />
+          <Route path={paths.users} element={<Users />} />
+          <Route path={paths.timesheet} element={<Timesheet />} />
         </Route>
       </Routes>
     </ChakraProvider>
